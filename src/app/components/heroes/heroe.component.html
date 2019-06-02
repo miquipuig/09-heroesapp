@@ -1,16 +1,29 @@
-<h3> Héroe <small>nombre...</small></h3>
-<button [routerLink]="['heroes']" class="btn btn-outline-danger">Regresar</button>
+<h1> Héroe <small>Nombre del Héroe</small></h1>
 
 <hr>
+<div class="row text-right">
+    <div class="col">
+        <button [routerLink]="['heroes']" class="btn btn-danger">   
+            <i class="fa fa-arrow-left"> </i>
+            Regresar
+        </button>
+    </div>
+</div>
 
 <div class="row animated fadeIn fast">
-    <div class="col-md-12">
+    <div class="col">
 
         <form (ngSubmit)="guardar()" #forma="ngForm">
 
             <div class="form-group">
+                <label> Firebase ID</label>
+                <input [(ngModel)]="heroe.id" name="id" type="text" class="form-control" placeholder="Firebase ID" disabled="disabled">
+                <small class="form-text text-muted"> Este campo es autogenerado</small>
+
+            </div>
+            <div class="form-group">
                 <label> Nombre</label>
-                <input [(ngModel)]="heroe.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del héroe" required>
+                <input [(ngModel)]="heroe.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre" required>
 
             </div>
 
