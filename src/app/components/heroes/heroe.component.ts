@@ -10,14 +10,21 @@ import { HeroeModel } from '../../model/heroe.model';
 })
 export class HeroeComponent implements OnInit {
 
+  heroe: HeroeModel= new HeroeModel();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  guardar() {
+  guardar( form: NgForm) {
 
+    if (form.invalid) {
+      console.log("Formulario no válido");
+      return;
+    }
+      console.log(form);
+      console.log(this.heroe);
   }
 
 }
