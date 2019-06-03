@@ -28,20 +28,33 @@
             </div>
 
             <div class="form-group">
-                <label> Casa</label>
-                <select [(ngModel)]="heroe.casa" name="casa" class="form-control">
-                  <option value="Marvel">Marvel</option>
-                  <option value="DC">DC</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label> Bio</label>
-                <textarea [(ngModel)]="heroe.bio" name="bio" type="text" class="form-control" placeholder="Bio.."></textarea>
+                <label> Poder</label>
+                <input [(ngModel)]="heroe.poder" name="nombre" type="text" class="form-control" placeholder="Poder del héroe">
 
             </div>
 
             <div class="form-group">
-                <button [disabled]="!forma.valid" type=submit class="btn btn-outline-primary">Guardar cambios</button>
+                <label> Estado</label>
+                <br>
+                <button class="btn btn-outline-success w-50" type="button"> 
+                <i class="fa fa-smile-wink"></i>  
+                  Vivo
+                </button>
+
+                <button class="btn btn-outline-danger w-50" type="button"> 
+                        <i class="fa fa-dizzy"></i>  
+                          Muerto
+                        </button>
+
+            </div>
+
+            <hr>
+
+
+            <div class="form-group text-center">
+                <button [disabled]="!forma.valid" type=submit class="btn btn-primary w-25">
+                    <i class="fas fa-save"></i>
+                    Guardar</button>
             </div>
 
         </form>

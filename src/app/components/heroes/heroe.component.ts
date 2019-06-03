@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Heroe } from '../../interfaces/heroe.interface';
+import { HeroeModel } from '../../model/heroe.model';
 
 
 @Component({
@@ -10,11 +10,6 @@ import { Heroe } from '../../interfaces/heroe.interface';
 })
 export class HeroeComponent implements OnInit {
 
-heroe: Heroe = {
-  nombre: '',
-  bio: '',
-  casa: 'Marvel'
-};
 
   constructor() { }
 
@@ -22,7 +17,7 @@ heroe: Heroe = {
   }
 
   guardar() {
-    console.log(this.heroe);
+
   }
 
 }
