@@ -33,7 +33,12 @@ export class HeroesService {
    return this.http.put(`${ this.url }/heroes/${ heroe.id}.json`, heroeTemp);
  }
 
- getHeroes() {
+getHeroe( id:string) {
+  return this.http.get(`${ this.url }/heroes/${ id }.json`);
+}
+
+
+ getHeroes( ) {
    return this.http.get(`${ this.url }/heroes.json`)
            .pipe(
               // map(resp => this.crearArreglo(resp) )
@@ -41,6 +46,8 @@ export class HeroesService {
            );
 
  }
+
+
  private crearArreglo( heroesObj: object ) {
   const heroes: HeroeModel[] = [];
   
