@@ -8,15 +8,15 @@ import { HeroeModel } from '../../model/heroe.model';
   styles: []
 })
 export class HeroesComponent implements OnInit {
-  heroes: HeroeModel[]=[];
-  constructor( private heroesService: HeroesService) { }
+
+
+  heroes: HeroeModel[] = [];
+
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
-    this.heroesService.getHeroes()
-    .subscribe( resp=> {
-      console.log(resp);
-      this.heroes=resp;
-    });
+    this.heroesService.getHeroes().subscribe(resp => this.heroes = resp );
+
   }
 
 }
