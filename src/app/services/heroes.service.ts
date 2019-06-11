@@ -49,14 +49,18 @@ getHeroe( id:string) {
 
  }
 
+borrarHeroe(id:String){
+return this.http.delete(`${ this.url }/heroes/${ id }.json`);
+}
+
 
  private crearArreglo( heroesObj: object ) {
   const heroes: HeroeModel[] = [];
-  
+
   if ( heroesObj === null ) { return []; }
-  
+
   Object.keys( heroesObj ).forEach( key => {
-  
+
     const heroe: HeroeModel = heroesObj[key];
     heroe.id = key;
     heroes.push(heroe);
