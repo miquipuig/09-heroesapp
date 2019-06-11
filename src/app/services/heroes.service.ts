@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HeroeModel } from '../model/heroe.model';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 
 
 
@@ -44,7 +44,8 @@ getHeroe( id:string) {
    return this.http.get(`${ this.url }/heroes.json`)
            .pipe(
               // map(resp => this.crearArreglo(resp) )
-              map( this.crearArreglo )
+              map( this.crearArreglo ),
+              delay(1000)
            );
 
  }
